@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify - Music for Every Mood</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="phone-container">
+        
+        <div id="page-login" class="screen-content active">
+            <div class="logo-area">
+                <div class="logo-m">M<span style="font-size:30px; position:relative; bottom:20px;">🎵</span></div>
+                <div class="brand-name">Modify</div>
+                <div class="tagline">MUSIC FOR EVERY MOOD</div>
+            </div>
+            <h3 style="color:#fff; margin-top:30px; text-align:center; font-size:20px;">Welcome!</h3>
+            <p style="color:#fff; text-align:center; font-size:13px; opacity:0.9;">Login to continue listening</p>
+            
+            <div class="login-box">
+                <label>Email or Username</label>
+                <div class="input-group">
+                    <i class="fa fa-user"></i>
+                    <input type="text" placeholder="Enter your email or username" value="pengguna_music">
+                </div>
+                
+                <label>Password</label>
+                <div class="input-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" placeholder="Enter your password" value="onesindonesia">
+                    <i class="fa fa-eye toggle-pass"></i>
+                </div>
+                
+                <button class="btn-login" onclick="performLogin()">Login</button>
+            </div>
+        </div>
+
+        <div id="page-loading" class="screen-content">
+            <div class="logo-area">
+                <div class="logo-m">M<span style="font-size:30px; position:relative; bottom:20px;">🎵</span></div>
+                <div class="brand-name">Modify</div>
+                <div class="tagline">MUSIC FOR EVERY MOOD</div>
+            </div>
+            <div class="emoji-row">
+                <span>😁</span><span>🙁</span><span>🏞️</span><span>🎯</span><span>❤️</span>
+            </div>
+            <div class="spinner"></div>
+            <div class="loading-text">Loading. . .</div>
+        </div>
+
+        <div id="page-home" class="screen-content">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                    <h2 class="page-title">Pilih Mood-mu</h2>
+                    <p class="page-subtitle">Kami akan menyiapkan musik yang sesuai dengan suasana hati</p>
+                </div>
+                <div class="logo-m" style="font-size:45px; text-shadow:none;">M<span style="font-size:15px;">🎵</span></div>
+            </div>
+            
+            <div class="section-title">Mood Populer</div>
+            <div class="mood-grid">
+                <div class="mood-item" onclick="playSongByMood('Bahagia')">
+                    <div class="mood-box">😁</div>
+                    <span>Bahagia</span>
+                </div>
+                <div class="mood-item" onclick="playSongByMood('Sedih')">
+                    <div class="mood-box">🙁</div>
+                    <span>Sedih</span>
+                </div>
+                <div class="mood-item" onclick="playSongByMood('Santai')">
+                    <div class="mood-box">🏞️</div>
+                    <span>Santai</span>
+                </div>
+                <div class="mood-item" onclick="playSongByMood('Semangat')">
+                    <div class="mood-box">⚡</div>
+                    <span>Semangat</span>
+                </div>
+                <div class="mood-item" onclick="playSongByMood('Romantis')">
+                    <div class="mood-box">❤️</div>
+                    <span>Romantis</span>
+                </div>
+                <div class="mood-item" onclick="playSongByMood('Fokus')">
+                    <div class="mood-box">🎯</div>
+                    <span>Fokus</span>
+                </div>
+            </div>
+
+            <div class="section-title">Mood Lainnya</div>
+            <div class="mood-grid">
+                <div class="mood-item" onclick="playSongByMood('Galau')">
+                    <div class="mood-box">😥</div>
+                    <span>Galau</span>
+                </div>
+                <div class="mood-item" onclick="playSongByMood('Tidur')">
+                    <div class="mood-box">💤</div>
+                    <span>Tidur</span>
+                </div>
+                <div class="mood-item" onclick="playSongByMood('Nostalgia')">
+                    <div class="mood-box"><i class="fa fa-clock" style="color:#000;"></i></div>
+                    <span>Nostalgia</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-cari" class="screen-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <div>
+                    <h2 class="page-title" style="font-size:28px;">Cari</h2>
+                    <p class="page-subtitle" style="margin:0;">Temukan lagu, artis, album, dan playlist</p>
+                </div>
+                <i class="fa fa-search" style="font-size: 55px; color:#000; opacity:0.8;"></i>
+            </div>
+
+            <div class="search-container">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Cari lagu, artis, album, dan playlist...">
+                <i class="fa fa-microphone"></i>
+            </div>
+
+            <div class="section-title" style="font-size:16px;">Pencarian Populer</div>
+            <div class="tag-container">
+                <div class="search-tag"><i class="fa fa-search"></i> Nadin Amizah</div>
+                <div class="search-tag"><i class="fa fa-search"></i> Bernadya</div>
+                <div class="search-tag"><i class="fa fa-search"></i> Letto</div>
+                <div class="search-tag"><i class="fa fa-search"></i> Yura Yunita</div>
+                <div class="search-tag"><i class="fa fa-search"></i> Hindia</div>
+                <div class="search-tag"><i class="fa fa-search"></i> Tulus</div>
+                <div class="search-tag"><i class="fa fa-search"></i> Coldplay</div>
+                <div class="search-tag"><i class="fa fa-search"></i> David Foster</div>
+            </div>
+
+            <div class="section-title" style="font-size:16px;">Jelajahi Semua</div>
+            <div class="explore-grid">
+                <div class="explore-item"><i class="fa fa-user"></i>Artis</div>
+                <div class="explore-item"><i class="fa fa-compact-disc"></i>Album</div>
+                <div class="explore-item"><i class="fa fa-music"></i>Lagu</div>
+                <div class="explore-item"><i class="fa fa-folder-open"></i>Playlist</div>
+            </div>
+        </div>
+
+        <div id="page-favorit" class="screen-content">
+            <h2 class="page-title" style="text-align:center; margin-bottom:20px;">Favorit</h2>
+            
+            <div class="playlist-header">
+                <div class="playlist-art">
+                    <i class="fa fa-heart" style="color:#fff;"></i>
+                </div>
+                <div class="playlist-info">
+                    <h3 style="color:#000; font-weight:bold;">Favorit Saya</h3>
+                    <p>Playlist berisi lagu-lagu yang kamu favoritkan.</p>
+                    <p style="font-weight:bold;"><i class="fa fa-user"></i> Pengguna</p>
+                </div>
+            </div>
+
+            <div class="playlist-actions">
+                <button class="btn-play-all"><i class="fa fa-play"></i> Putar Semua</button>
+                <i class="fa fa-heart action-icon"></i>
+                <i class="fa fa-download action-icon"></i>
+            </div>
+
+            <div class="stats-grid" style="background:transparent; margin:0; padding:0 0 15px 0; border-bottom:1px solid rgba(0,0,0,0.1)">
+                <div class="stat-box"><i class="fa fa-music"></i><div class="count">0</div><div class="label">Playlist</div></div>
+                <div class="stat-box"><i class="fa fa-heart"></i><div class="count">0</div><div class="label">Favorit</div></div>
+                <div class="stat-box"><i class="fa fa-clock"></i><div class="count">0</div><div class="label">Menit Didengar</div></div>
+                <div class="stat-box"><i class="fa fa-download"></i><div class="count">0</div><div class="label">Unduhan</div></div>
+            </div>
+
+            <div class="empty-state">
+                <div class="empty-heart">❤️</div>
+                <h4 style="color:#000; font-weight:bold; margin-bottom:5px;">Belum ada lagu favorit</h4>
+                <p style="font-size:12px; color:#333;">Tambahkan lagu ke favorit untuk melihatnya disini</p>
+                <button class="btn-cari-lagu" onclick="switchTab('cari')"><i class="fa fa-search"></i> Cari lagu</button>
+            </div>
+        </div>
+
+        <div id="page-profile" class="screen-content">
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <div class="avatar-circle">
+                        <i class="fa fa-user" style="color:#fff;"></i>
+                    </div>
+                    <div class="cam-icon"><i class="fa fa-camera"></i></div>
+                </div>
+                <div class="profile-info">
+                    <h2>Pengguna</h2>
+                    <p>@pengguna_music</p>
+                    <div class="badge-premium">
+                        <i class="fa fa-crown"></i> Premium
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bio-text">"Musik adalah teman terbaik setiap suasana hati."</div>
+
+            <div class="stats-grid">
+                <div class="stat-box"><i class="fa fa-music"></i><div class="count">0</div><div class="label">Playlist</div></div>
+                <div class="stat-box"><i class="fa fa-heart"></i><div class="count">0</div><div class="label">Favorit</div></div>
+                <div class="stat-box"><i class="fa fa-clock"></i><div class="count">0</div><div class="label">Menit Didengar</div></div>
+                <div class="stat-box"><i class="fa fa-download"></i><div class="count">0</div><div class="label">Unduhan</div></div>
+            </div>
+
+            <div class="menu-list">
+                <div class="menu-item">
+                    <div class="menu-left">
+                        <i class="fa fa-user-circle"></i>
+                        <div class="menu-text">
+                            <h4>Akun</h4>
+                            <p>Kelola informasi akun kamu</p>
+                        </div>
+                    </div>
+                    <div class="menu-arrow"><i class="fa fa-play" style="font-size:10px; margin-left:2px;"></i></div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-left">
+                        <i class="fa fa-history"></i>
+                        <div class="menu-text">
+                            <h4>Riwayat Mendengarkan</h4>
+                            <p>Lihat musik yang pernah kamu dengarkan</p>
+                        </div>
+                    </div>
+                    <div class="menu-arrow"><i class="fa fa-play" style="font-size:10px; margin-left:2px;"></i></div>
+                </div>
+
+                <div class="menu-item" onclick="switchTab('playlist')">
+                    <div class="menu-left">
+                        <i class="fa fa-folder"></i>
+                        <div class="menu-text">
+                            <h4>Playlist Kamu</h4>
+                            <p>Lihat dan kelola playlist buatanmu</p>
+                        </div>
+                    </div>
+                    <div class="menu-arrow"><i class="fa fa-play" style="font-size:10px; margin-left:2px;"></i></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-left">
+                        <i class="fa fa-cog"></i>
+                        <div class="menu-text">
+                            <h4>Pengaturan</h4>
+                            <p>Atur preferensi aplikasi</p>
+                        </div>
+                    </div>
+                    <div class="menu-arrow"><i class="fa fa-play" style="font-size:10px; margin-left:2px;"></i></div>
+                </div>
+
+                <div class="menu-item" onclick="logout()">
+                    <div class="menu-left">
+                        <i class="fa fa-sign-out-alt"></i>
+                        <div class="menu-text">
+                            <h4>Keluar</h4>
+                            <p>Keluar dari akun ini</p>
+                        </div>
+                    </div>
+                    <div class="menu-arrow"><i class="fa fa-play" style="font-size:10px; margin-left:2px;"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-player" class="screen-content">
+            <div class="player-window">
+                <div class="player-topbar">
+                    <span>Now Playing</span>
+                    <div class="window-controls">
+                        <div class="win-btn">_</div>
+                        <div class="win-btn"><i class="fa fa-square-o" style="font-size:8px;"></i></div>
+                        <div class="win-btn" onclick="switchTab('home')">X</div>
+                    </div>
+                </div>
+                <div class="player-body">
+                    <div class="album-art-box">
+                        <i class="fa fa-music" style="color:#000;"></i>
+                    </div>
+                    
+                    <h3 id="current-mood-title" style="color:#000; margin-bottom: 5px; font-weight: bold;">Mood Song</h3>
+                    <p style="font-size:13px; color:#555; margin-bottom:25px;">Playing from Modify Playlist</p>
+
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                            <div class="progress-knob"></div>
+                        </div>
+                        <div class="time-info">
+                            <span>1:24</span>
+                            <span>3:11</span>
+                        </div>
+                    </div>
+
+                    <div class="player-controls">
+                        <i class="fa fa-step-backward btn-prev"></i>
+                        <div class="btn-play-pause">
+                            <i class="fa fa-pause"></i>
+                        </div>
+                        <i class="fa fa-step-forward btn-next"></i>
+                    </div>
+                </div>
+                <div class="player-bottom-bar"></div>
+            </div>
+        </div>
+
+        <div id="page-playlist" class="screen-content">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                    <h2 class="page-title">Playlist</h2>
+                    <p class="page-subtitle" style="color:#000; font-weight:500; font-size:14px;">Koleksi lagu pilihan yang siap menemani harimu</p>
+                </div>
+                <i class="fa fa-folder-open" style="font-size: 60px; color:#000;"></i>
+            </div>
+
+            <div class="tab-menu">
+                <button class="tab-btn active">Semua</button>
+                <button class="tab-btn" onclick="switchTab('home')">Mood</button>
+                <button class="tab-btn">Baru Diputar</button>
+            </div>
+
+            <div class="center-empty-text">Kosong</div>
+        </div>
+
+        <div class="bottom-nav" id="main-nav" style="display: none;">
+            <div class="nav-item active" onclick="switchTab('home')">
+                <i class="fa fa-home"></i>
+                Home
+            </div>
+            <div class="nav-item" onclick="switchTab('cari')">
+                <i class="fa fa-search"></i>
+                Cari
+            </div>
+            <div class="nav-item" onclick="switchTab('favorit')">
+                <i class="fa fa-heart"></i>
+                Favorit
+            </div>
+            <div class="nav-item" onclick="switchTab('profile')">
+                <i class="fa fa-user"></i>
+                Profile
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
